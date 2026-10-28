@@ -1,6 +1,8 @@
 # OverGate RC4 install — bootstrap note (IN_PROGRESS)
 
-Status: **IN_PROGRESS** — plan stage only. Not a readiness or acceptance claim.
+Status: **IN_PROGRESS** — apply + helpers + project verify complete; later checkpoints
+(fresh-session hook activation probes, Windows checklist, finalize, merge) are explicitly
+NOT RUN by this note. Not a readiness or merge-readiness claim.
 
 This note tracks the OverGate v4.0.0-rc.4 (WI-1) installation attempt into this smoke-test
 project, per `.agents/INSTALL.md` from the source checkout. Full machine-local artifacts
@@ -39,10 +41,24 @@ A Verification Contract was prepared for this install, covering:
 - Target inventory confirmed: single `README.md`, clean checkout at the seed commit, public
   GitHub repo, default branch `main`, no pre-existing branches besides `main`, no pre-existing
   PRs.
-- No managed OverGate payload has been written to this target yet. This commit is docs-only.
-- `install-overgate.py plan` (no target writes) and its SHA256 are to be published on the
-  associated Draft PR for this branch.
-- Independent PLAN_READY has **not** been obtained yet. `apply` and the post-apply helpers
-  (`og-init-memory-bank.sh`, `bd-bootstrap.sh`, `og-protect-main.sh`) have **not** run.
-- This note will be updated as later stages (apply, helpers, verify.sh, check-reference.py)
-  complete. Merge is reserved for the operator.
+- Independent PLAN_READY obtained via PM from a separate reviewer before any write
+  (plan SHA256 `9f9dade37c9488b1a3d52c486b14ac5422a25b0926f89ee4bfd6d98afd695cd8`); evidence
+  published at
+  https://github.com/komleff/overgate-rc4-wi1-smoke-20261028/pull/1#issuecomment-6472783557 .
+  No drift between the reviewed plan and the state at apply time.
+- `apply` run (exit 0); backup journal at
+  `.overgate-backups/015cf86a07e34fa4b49a9ed4064ff6cd/rollback.json` (git-ignored, local only).
+- Helpers run strictly in order, all exit 0: `og-init-memory-bank.sh` (six Memory Bank files
+  created), `bd-bootstrap.sh` (Beads ready, `origin/beads-backup` published), `og-protect-main.sh`
+  (branch protection on `main` verified: PR required / 0 approvals, `enforce_admins: true`,
+  `allow_force_pushes: false`, `allow_deletions: false`, confirmed via API readback).
+- `.agents/project/verify.sh` filled with a minimal project-owned smoke test (README
+  presence/non-emptiness/UTF-8, `.overgate/install-state.json` source SHA/mode/beads, presence
+  of required public entrypoints) and run: **PASS**. `python3 scripts/check-reference.py`:
+  **PASS**.
+- Re-running `install-overgate.py plan` after apply is a no-op: 73/73 operations with
+  `before == after`, 0 conflicts (read-only re-check; no new approval/apply needed for this
+  no-op confirmation).
+- Not run / explicitly deferred: fresh native-session hook-activation probes (this session's
+  own post-apply hook behavior is not treated as that proof), Windows simple/complex-path
+  checklist, `finalize-pr`, operator merge. Merge is reserved for the operator.
