@@ -31,10 +31,12 @@ with open('$STATE', encoding='utf-8') as f:
 expected_sha = '75677f9c9bc79ed8831df3251e374771a3a02b23'
 if state.get('source_sha') != expected_sha:
     sys.exit('source_sha mismatch: got %r, expected %r' % (state.get('source_sha'), expected_sha))
-if state.get('mode') not in ('auto', 'bypass', 'custom'):
-    sys.exit('unexpected mode: %r' % state.get('mode'))
-if not isinstance(state.get('beads'), bool):
-    sys.exit('beads field missing or not boolean: %r' % state.get('beads'))
+expected_mode = 'auto'
+expected_beads = True
+if state.get('mode') != expected_mode:
+    sys.exit('mode mismatch: got %r, expected %r (approved plan)' % (state.get('mode'), expected_mode))
+if state.get('beads') is not expected_beads:
+    sys.exit('beads mismatch: got %r, expected %r (approved plan)' % (state.get('beads'), expected_beads))
 " || fail "install-state.json checks failed"
 
 # 3. Required installed public entrypoints present (and executable where applicable).
