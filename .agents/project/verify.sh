@@ -28,7 +28,7 @@ python3 -c "
 import json, sys
 with open('$STATE', encoding='utf-8') as f:
     state = json.load(f)
-expected_sha = '75677f9c9bc79ed8831df3251e374771a3a02b23'
+expected_sha = 'cc0f3f2cfe3d96f6930ec68e9a31c9beef799831'
 if state.get('source_sha') != expected_sha:
     sys.exit('source_sha mismatch: got %r, expected %r' % (state.get('source_sha'), expected_sha))
 expected_mode = 'auto'

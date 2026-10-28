@@ -62,29 +62,25 @@
       "mode": 420,
       "sha256": "0fceecec8d63de5f0b4105937fc4ba18a3039d1ce5c6346adfb9a25b8aec0e2f"
     },
-    ".agents/project/verify.sh": {
-      "mode": 493,
-      "sha256": "c4c66cffa8de7578d8737c4026cc257f6a8540cc1fbc4e3ae0273587262d3f38"
-    },
     ".agents/skills/canon-router/SKILL.md": {
       "mode": 420,
-      "sha256": "ded820769c7d5ecea5032982246e3b75813b2a0f4e79ad4b654e22a0a6b893bf"
+      "sha256": "3e507b1dfc2d0fbfadaf419d022b59f7cae4b8d25cd0f00d7f0b181e06d45209"
     },
     ".agents/skills/diagnose/SKILL.md": {
       "mode": 420,
-      "sha256": "97e5033b3c8253c97b43b1c43244c18d8c7bab1b904a7e43367d3301d95673fa"
+      "sha256": "3079ee76c606bf71819995618015f8e8f40368a75fefe75df889ebea69a7a81f"
     },
     ".agents/skills/handoff/SKILL.md": {
       "mode": 420,
-      "sha256": "bd5146c2b32b8634a9650d066883e0ef81ff81e22af8643b91222d884d55554f"
+      "sha256": "03671805bd9e1f07f27872b5ee26a2e9d6d8797879af716c48d48792fad7163e"
     },
     ".agents/skills/product-gap/SKILL.md": {
       "mode": 420,
-      "sha256": "50387c083b72ee89a09768e806c0c2b9f0e33148fc0de316fd96465fffc112e9"
+      "sha256": "c943d548cedc6806f3c05e42430dac4005bbe5f86f1893be27dff80e60e243e9"
     },
     ".agents/skills/product-handoff/SKILL.md": {
       "mode": 420,
-      "sha256": "2b3ef08ecd31f87082955749efc22413c2c9f73d2b4ffe77bb6d559b1c794cc4"
+      "sha256": "2e4beeb9b15ce65396be7549e7576033dd4566082842d7b5127ca82646ee08a4"
     },
     ".agents/templates/AGENTS.template.md": {
       "mode": 420,
@@ -174,21 +170,9 @@
       "mode": 420,
       "sha256": "f90151ec57fc0628e6bd84c66a1136ecf0fade5c36e87b2cb425ef3b99f32a57"
     },
-    ".claude/rules/beads.md": {
-      "mode": 420,
-      "sha256": "8f7c1911305beb7cb5a058feb3235492144b53a0d5b9f92c6b51fbc60d32e552"
-    },
     ".claude/rules/large-payloads.md": {
       "mode": 420,
       "sha256": "01a1a1b11b0a8de1ba83ad8269d21036606cdb1773795103ea06cbb9360f300f"
-    },
-    ".claude/rules/tests.md": {
-      "mode": 420,
-      "sha256": "7097259cebddfb823915da111e758f24261a8ff33db958f96d35e4643d89eb5a"
-    },
-    ".claude/rules/universal.md": {
-      "mode": 420,
-      "sha256": "ed543e232e1ef55af4fa64c3665c306fe13e9854b3a88ee7c7ad2a3834e4affb"
     },
     ".claude/settings.json": {
       "mode": 420,
@@ -252,11 +236,7 @@
     },
     ".gitignore": {
       "mode": 420,
-      "sha256": "5326c2e5579af8feea13cc603edbf8e09d7be872dff812cbc30d7b1bca25e8bc"
-    },
-    "AGENTS.md": {
-      "mode": 420,
-      "sha256": "e95deae089fd6f984bf5ae628c40942bf0ca2d25d40b9c1d622a83d9cd93eaf4"
+      "sha256": "7b46afb0633a2eb787f0a100f67fe779b111dcc50060761b5c1bfd626f5e1d1a"
     },
     "LICENSE": {
       "mode": 420,
@@ -317,5 +297,5 @@
   },
   "manifest_version": "4.0.0-rc.4",
   "mode": "auto",
-  "source_sha": "75677f9c9bc79ed8831df3251e374771a3a02b23"
+  "source_sha": "cc0f3f2cfe3d96f6930ec68e9a31c9beef799831"
 }
